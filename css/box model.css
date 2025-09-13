@@ -1,0 +1,29 @@
+div{
+    width: 300px;
+    float:left;/*cho phép các thẻ div đứng cạnh nhau*/
+    border:1px solid rgb(239, 26, 26);
+    /*top left right bottom*/
+    margin:10px;/* khoảng cách giữa các thẻ div*/
+    padding: 10px;/*khoảng cách giữa viền và nội dung*/
+    /*margin và padding có thể đật riêng lẻ cho tưng phía*/
+    /*margin top,,,,margin right*/
+    /*padding top,,, padding right*/
+    box sizing:border-box;/*bao gồm cả border và padding vào trong chiều rộng và chiều cao của thẻ*/
+    border-radius:5px;/*bo tròn các góc*/
+
+    
+}
+div:hover{/* hiệu ứng khi hover chuột vào thẻ giúp người dùng dễ nhận diện phần tử khi sử dụng*/
+    background-color:red  ;  /* màu nền khi hover chuột vào thẻ*/
+    /* tranform: translate(o-5px); di chuyển thẻ lên trên 5px */
+    /* tranform scale(1.05); phóng to thẻ lên 5%*/
+    transform: rotate(45deg);/* xoay thẻ 45 đọ*/
+    transition:all 0.3s ease;/* hiệu ứng chuyển đổi mượt mà trong 0,3s*/
+
+}
+img{
+    max-width: 100%;/*cho hình ảnh về kích thước của ảnh cha nếu nó vượt quá*/
+}
+.special{
+    background-color: aquamarine;
+}

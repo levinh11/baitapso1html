@@ -1,0 +1,21 @@
+h1{
+    /chỉ định thuộc tính cho phần tử h1
+    color:red;
+}
+p{
+    chỉ định thuộc tính cho phần tử p
+    color:green ;/mã mày dạng hex
+    font-size:15px;/kích thước chữ
+    font-family: Arial, sans-serif;/kiểu font chữ
+    text-align: justify;/canh đều 2 bên justify,left,right,center.
+    line-height: 1.5;/khoảng cách giữa các dòng
+    text transform:none;/chuyển chữ thường thành chữ in hoa
+    text-decoration:none;/gạch chân chữ underline
+    font-weight:400;/độ đậm của chữ
+    word-spacing:1px;/khoảng cách giữa các từ
+    width:600px;/đọ rộng của đoạn văn
+    background-color: #fdfdfd;/màu nền
+    border-bottom:1px solid black;/viền dưới
+    
+
+}

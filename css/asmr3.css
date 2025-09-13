@@ -1,0 +1,20 @@
+div{
+    width: 300px;
+    float:left;
+    background-color:grey;
+    margin:10px;
+    border:1px solid rgb(239, 26, 26);
+
+}
+div2{
+width: 700px;
+    float:left;
+    background-color:rgb(239, 239, 239);
+    border:1px solid rgb(239, 26, 26);
+    margin:10px;
+
+}
+img{
+    max-width: 100%;/*cho hình ảnh về kích thước của ảnh cha nếu nó vượt quá*/
+    
+}
