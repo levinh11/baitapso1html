@@ -9,6 +9,7 @@ body {
     font-weight: 400;
     letter-spacing: .06em;
     color: #000;
+    background-color: white;
 }
 .element-box1{
     width: 50%;
