@@ -76,3 +76,15 @@ if(num==lk){
 }else{
     alert("chuc ban may man lan sau");
 }
+//setTimeout(function)
+//   alert("ABCD");
+//   alert("123");
+// }, 3000};//3000ms
+var c=10;
+var bom=setInterval(function(){
+    alert(c);
+    c--;
+    if(c<0){
+        clearInterval(bom);
+    }
+},1000);
