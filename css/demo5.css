@@ -1,0 +1,25 @@
+body{
+    background-image: url("/images/thoitiet.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.item{
+    float: left;
+    width: 100%;
+    background-color: #00000050;
+    color: azure;
+    padding: 20px;
+    height: 190px;
+    line-height: 1.5;
+}
+.item h3{
+    font-size: 16px;
+}
+.item h2{
+    font-size: 26px;
+}
+.item img{
+    transform: translate(160px, -80px);
+}

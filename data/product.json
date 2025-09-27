@@ -1,0 +1,19 @@
+{
+    "name": "Iphone 17 Air",
+    "price": 32000000,
+    "image": "images/ldvdeptrai.jpg",
+    "description": "Dong san pham Air moi co o ban 17",
+    "stock": {
+        "qty": 9
+    },   
+    "reviews": [
+        {
+            "rate": 5,
+            "review": "Nhin long lanh dep lam"
+        },
+        {
+            "rate": 4,
+            "review": "Cung kha on, gia hoi cao"
+        }
+    ]
+}
