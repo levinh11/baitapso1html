@@ -1,215 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NetFilm - Movie Viewer</title>
-
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    crossorigin="anonymous"
-  />
-
-  <!-- FontAwesome (optional logo icons) -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="css/test2.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2</title>
+    <link rel="stylesheet" href="css/test2.css"/> 
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg px-3">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center text-white" href="#">
-        <span class="logo-icon"><i class="fas fa-film"></i></span>
-        <strong>NetFilm</strong>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active text-light" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">Movies</a>
-          </li>
-        </ul>
-        <div class="search-box d-flex align-items-center">
-          <input type="text" id="searchInput" placeholder="Enter keywords..." />
-          <button id="searchBtn">Search</button>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">🎬NetFilm</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Favorites</a>
+      </ul>
+    </div>
+    <div class="search-section">
+      <input type="text" class="form-control" placeholder="Search for movies...">
+    </div>
+</nav>
+</body>
+     <section class="section-main">
+        <div class="container">
+            <div class="container1">
+                <div class="form-group">
+                    <input type="checkbox" id="action" value="action">
+                    <label for="action">Action</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="adventure" value="adventure">
+                    <label for="adventure">Adventure</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="romance" value="romance">
+                    <label for="romance">Romance</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="documentary" value="documentary">
+                    <label for="documentary">Documentary</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="war" value="war">
+                    <label for="war">War</label>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nrXlY6gzTTM?si=ZyJM728rmaw4IRcy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="essays">
+                    <p class="essays1">
+                        The Post is a 2017 American political thriller film[7][8] about The Washington Post and the publication of the Pentagon Papers. It was directed and produced by Steven Spielberg, and written by Liz Hannah and Josh Singer. It stars Meryl Streep as Katharine Graham, the publisher of the Washington Post, and Tom Hanks as Ben Bradlee, the longtime executive editor of The Washington Post, with Sarah Paulson, Bob Odenkirk, Tracy Letts, Bradley Whitford, David Cross, Bruce Greenwood, Carrie Coon, Alison Brie, and Matthew Rhys in supporting roles
+Set in 1971, The Post depicts the true story of attempts by journalists at The Washington Post to publish the infamous Pentagon Papers, a set of classified documents regarding the 20-year involvement of the United States government in the Vietnam War and earlier in French Indochina back to the 1940s.
+                    </p>
+                </div>
+                <div class="row" id="movie">
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/The_Post_%28film%29.png" alt="The Post" class="movie-poster">
+                        <div class="movie-title">The Post</div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="The Godfather" class="movie-poster">
+                        <div class="movie-title">The Godfather</div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <img src="https://play-lh.googleusercontent.com/s3L0vFALj83vskw_kEbEQTfTvTPWb8eT1WFEC-Ew-7Iblx1KAbXdQr6HTMRlELIxFhrlIQ" alt="The Lion King" class="movie-poster">
+                        <div class="movie-title">The Lion King</div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                        <img src="https://upload.wikimedia.org/wikipedia/vi/b/b0/Avatar-Teaser-Poster.jpg" alt="Avatar" class="movie-poster">
+                        <div class="movie-title">Avatar</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+    <footer class="footer mt-5 py-4 bg-dark text-white">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>About NetFilm</h5>
+        <p>NetFilm is your go-to destination for classic and modern movies. Watch, enjoy, and explore!</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Movies</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Favorites</a></li>
+          <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Follow Us</h5>
+        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i> Facebook</a><br>
+        <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i> Instagram</a><br>
+        <a href="#" class="text-white"><i class="bi bi-twitter"></i> Twitter</a>
       </div>
     </div>
-  </nav>
-
-  <!-- Main Content -->
-  <div class="container-fluid mt-3">
-    <div class="row">
-      <!-- Sidebar -->
-      <aside class="col-lg-2 sidebar text-light">
-        <h5>Filter by Genre</h5>
-        <div class="form-group">
-          <input type="checkbox" id="action" value="Action" />
-          <label for="action">Action</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="adventure" value="Adventure" />
-          <label for="adventure">Adventure</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="romance" value="Romance" />
-          <label for="romance">Romance</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="documentary" value="Documentary" />
-          <label for="documentary">Documentary</label>
-        </div>
-        <div class="form-group">
-          <input type="checkbox" id="war" value="War" />
-          <label for="war">War</label>
-        </div>
-        <button id="clearFilters" class="btn btn-secondary btn-sm mt-2 w-100">Clear Filters</button>
-      </aside>
-
-      <!-- Main movie section -->
-      <main class="col-lg-10">
-        <!-- Video Player -->
-        <div class="video-player mb-3 ratio ratio-16x9" id="videoPlayerContainer">
-          <iframe
-            id="ytPlayer"
-            src=""
-            allowfullscreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            title="YouTube video player"
-          ></iframe>
-        </div>
-
-        <!-- Movie List -->
-        <div class="row" id="movieList"></div>
-      </main>
-    </div>
+    <hr class="bg-light">
+    <p class="mb-0">&copy; 2025 NetFilm. All rights reserved.</p>
   </div>
-
-  <!-- Bootstrap JS -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"
-  ></script>
-
-  <!-- App Script -->
-  <script>
-    const movies = [
-      {
-        id: 1,
-        title: "Inception Trailer",
-        genre: ["Action", "Adventure"],
-        poster: "https://img.youtube.com/vi/YoHD9XEInc0/hqdefault.jpg",
-        video: "https://www.youtube.com/embed/YoHD9XEInc0",
-      },
-      {
-        id: 2,
-        title: "Interstellar Trailer",
-        genre: ["Drama", "Adventure"],
-        poster: "https://img.youtube.com/vi/zSWdZVtXT7E/hqdefault.jpg",
-        video: "https://www.youtube.com/embed/zSWdZVtXT7E",
-      },
-      {
-        id: 3,
-        title: "Planet Earth Documentary",
-        genre: ["Documentary"],
-        poster: "https://img.youtube.com/vi/8F9zM3Eypq0/hqdefault.jpg",
-        video: "https://www.youtube.com/embed/8F9zM3Eypq0",
-      },
-      {
-        id: 4,
-        title: "Romantic Movie Trailer",
-        genre: ["Romance"],
-        poster: "https://img.youtube.com/vi/5PSNL1qE6VY/hqdefault.jpg",
-        video: "https://www.youtube.com/embed/5PSNL1qE6VY",
-      },
-      {
-        id: 5,
-        title: "War Documentary",
-        genre: ["War", "Documentary"],
-        poster: "https://img.youtube.com/vi/W4pJQUxS5Oo/hqdefault.jpg",
-        video: "https://www.youtube.com/embed/W4pJQUxS5Oo",
-      },
-    ];
-
-    const movieListEl = document.getElementById("movieList");
-    const ytPlayer = document.getElementById("ytPlayer");
-    const searchInput = document.getElementById("searchInput");
-    const searchBtn = document.getElementById("searchBtn");
-    const checkboxes = document.querySelectorAll(".sidebar input[type=checkbox]");
-    const clearFiltersBtn = document.getElementById("clearFilters");
-
-    function renderMovies() {
-      const selectedGenres = Array.from(checkboxes)
-        .filter((cb) => cb.checked)
-        .map((cb) => cb.value);
-
-      const keyword = searchInput.value.trim().toLowerCase();
-
-      const filtered = movies.filter((movie) => {
-        const genreMatch =
-          selectedGenres.length === 0 || selectedGenres.some((g) => movie.genre.includes(g));
-        const keywordMatch = movie.title.toLowerCase().includes(keyword);
-        return genreMatch && keywordMatch;
-      });
-
-      movieListEl.innerHTML = "";
-
-      if (filtered.length === 0) {
-        movieListEl.innerHTML = `<p class="text-light">No movies found.</p>`;
-        return;
-      }
-
-      filtered.forEach((movie) => {
-        const col = document.createElement("div");
-        col.className = "col-sm-6 col-md-4 col-lg-3 mb-4";
-        col.innerHTML = `
-          <div class="movie-card" data-id="${movie.id}">
-            <img src="${movie.poster}" alt="${movie.title}" class="movie-poster" />
-            <div class="movie-title">${movie.title}</div>
-          </div>
-        `;
-        col.querySelector(".movie-card").addEventListener("click", () => {
-          playMovie(movie);
-        });
-        movieListEl.appendChild(col);
-      });
-    }
-
-    function playMovie(movie) {
-      ytPlayer.src = movie.video + "?autoplay=1";
-    }
-
-    checkboxes.forEach((cb) => cb.addEventListener("change", renderMovies));
-    searchBtn.addEventListener("click", renderMovies);
-    searchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") renderMovies();
-    });
-
-    clearFiltersBtn.addEventListener("click", () => {
-      checkboxes.forEach((cb) => (cb.checked = false));
-      searchInput.value = "";
-      renderMovies();
-    });
-
-    renderMovies();
-  </script>
-</body>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
-
-
