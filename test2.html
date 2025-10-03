@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NetFilm - Movie Viewer</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+
+  <!-- FontAwesome (optional logo icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/test2.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center text-white" href="#">
+        <span class="logo-icon"><i class="fas fa-film"></i></span>
+        <strong>NetFilm</strong>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-light" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#">Movies</a>
+          </li>
+        </ul>
+        <div class="search-box d-flex align-items-center">
+          <input type="text" id="searchInput" placeholder="Enter keywords..." />
+          <button id="searchBtn">Search</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-lg-2 sidebar text-light">
+        <h5>Filter by Genre</h5>
+        <div class="form-group">
+          <input type="checkbox" id="action" value="Action" />
+          <label for="action">Action</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="adventure" value="Adventure" />
+          <label for="adventure">Adventure</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="romance" value="Romance" />
+          <label for="romance">Romance</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="documentary" value="Documentary" />
+          <label for="documentary">Documentary</label>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="war" value="War" />
+          <label for="war">War</label>
+        </div>
+        <button id="clearFilters" class="btn btn-secondary btn-sm mt-2 w-100">Clear Filters</button>
+      </aside>
+
+      <!-- Main movie section -->
+      <main class="col-lg-10">
+        <!-- Video Player -->
+        <div class="video-player mb-3 ratio ratio-16x9" id="videoPlayerContainer">
+          <iframe
+            id="ytPlayer"
+            src=""
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="YouTube video player"
+          ></iframe>
+        </div>
+
+        <!-- Movie List -->
+        <div class="row" id="movieList"></div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- App Script -->
+  <script>
+    const movies = [
+      {
+        id: 1,
+        title: "Inception Trailer",
+        genre: ["Action", "Adventure"],
+        poster: "https://img.youtube.com/vi/YoHD9XEInc0/hqdefault.jpg",
+        video: "https://www.youtube.com/embed/YoHD9XEInc0",
+      },
+      {
+        id: 2,
+        title: "Interstellar Trailer",
+        genre: ["Drama", "Adventure"],
+        poster: "https://img.youtube.com/vi/zSWdZVtXT7E/hqdefault.jpg",
+        video: "https://www.youtube.com/embed/zSWdZVtXT7E",
+      },
+      {
+        id: 3,
+        title: "Planet Earth Documentary",
+        genre: ["Documentary"],
+        poster: "https://img.youtube.com/vi/8F9zM3Eypq0/hqdefault.jpg",
+        video: "https://www.youtube.com/embed/8F9zM3Eypq0",
+      },
+      {
+        id: 4,
+        title: "Romantic Movie Trailer",
+        genre: ["Romance"],
+        poster: "https://img.youtube.com/vi/5PSNL1qE6VY/hqdefault.jpg",
+        video: "https://www.youtube.com/embed/5PSNL1qE6VY",
+      },
+      {
+        id: 5,
+        title: "War Documentary",
+        genre: ["War", "Documentary"],
+        poster: "https://img.youtube.com/vi/W4pJQUxS5Oo/hqdefault.jpg",
+        video: "https://www.youtube.com/embed/W4pJQUxS5Oo",
+      },
+    ];
+
+    const movieListEl = document.getElementById("movieList");
+    const ytPlayer = document.getElementById("ytPlayer");
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const checkboxes = document.querySelectorAll(".sidebar input[type=checkbox]");
+    const clearFiltersBtn = document.getElementById("clearFilters");
+
+    function renderMovies() {
+      const selectedGenres = Array.from(checkboxes)
+        .filter((cb) => cb.checked)
+        .map((cb) => cb.value);
+
+      const keyword = searchInput.value.trim().toLowerCase();
+
+      const filtered = movies.filter((movie) => {
+        const genreMatch =
+          selectedGenres.length === 0 || selectedGenres.some((g) => movie.genre.includes(g));
+        const keywordMatch = movie.title.toLowerCase().includes(keyword);
+        return genreMatch && keywordMatch;
+      });
+
+      movieListEl.innerHTML = "";
+
+      if (filtered.length === 0) {
+        movieListEl.innerHTML = `<p class="text-light">No movies found.</p>`;
+        return;
+      }
+
+      filtered.forEach((movie) => {
+        const col = document.createElement("div");
+        col.className = "col-sm-6 col-md-4 col-lg-3 mb-4";
+        col.innerHTML = `
+          <div class="movie-card" data-id="${movie.id}">
+            <img src="${movie.poster}" alt="${movie.title}" class="movie-poster" />
+            <div class="movie-title">${movie.title}</div>
+          </div>
+        `;
+        col.querySelector(".movie-card").addEventListener("click", () => {
+          playMovie(movie);
+        });
+        movieListEl.appendChild(col);
+      });
+    }
+
+    function playMovie(movie) {
+      ytPlayer.src = movie.video + "?autoplay=1";
+    }
+
+    checkboxes.forEach((cb) => cb.addEventListener("change", renderMovies));
+    searchBtn.addEventListener("click", renderMovies);
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") renderMovies();
+    });
+
+    clearFiltersBtn.addEventListener("click", () => {
+      checkboxes.forEach((cb) => (cb.checked = false));
+      searchInput.value = "";
+      renderMovies();
+    });
+
+    renderMovies();
+  </script>
+</body>
+</html>
+
+

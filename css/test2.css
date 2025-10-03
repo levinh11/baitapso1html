@@ -1,0 +1,78 @@
+body {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+    }
+
+    .logo-icon {
+      font-size: 1.8rem;
+      margin-right: 0.5rem;
+    }
+
+    .sidebar {
+      background-color: #222;
+      padding: 1rem;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar .form-group label {
+      cursor: pointer;
+    }
+
+    .movie-card {
+      background-color: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+
+    .movie-poster {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .movie-title {
+      padding: 0.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* YouTube iframe container */
+    .video-player {
+      background-color: black;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .search-box input[type="text"] {
+      width: 250px;
+      border-radius: 0;
+      padding: 0.3rem 0.5rem;
+      border: none;
+    }
+
+    .search-box button {
+      border-radius: 0;
+      padding: 0.3rem 1rem;
+      border: none;
+      background-color: #007bff;
+      color: white;
+    }
+
+    @media (max-width: 992px) {
+      .sidebar {
+        height: auto;
+      }
+    }
